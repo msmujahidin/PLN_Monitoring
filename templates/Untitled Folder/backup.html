@@ -1,0 +1,373 @@
+
+
+
+
+                        <div class="container-fluid">
+                            <h3 class="text-dark mb-4">Data Management</h3>
+                            <div class="card shadow">
+                            <div class="card-header">
+                                <p class="text-primary m-0 font-weight-bold">Data Management</p>
+                            </div>
+                               <div class="card-body">
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#addDeviceModal">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                    <div class="modal" tabindex="-1" role="dialog" id="addDeviceModal">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <form action="" method="post">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Tambah Peralatan</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Tutup">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="nama_alat">Nama Peralatan</label>
+                                                                <input type="text" class="form-control" id="nama_alat" placeholder="Nama Peralatan">
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="lokasi_alat">Lokasi Peralatan</label>
+                                                                <input type="text" class="form-control" id="lokasi_alat" placeholder="Lokasi Peralatan">
+                                                            </div>
+                                                        </div>
+                                                       <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <div class="input-group mb-3">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Tipe Sensor</span>
+                                                                    </div>
+                                                                    <select name="tipe_sensor" class="form-control">
+                                                                        <option value="1">RPM</option>
+                                                                        <option value="2">Ampere</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group col-md-6">
+                                                                <div class="input-group mb-3">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">Jenis Alat</span>
+                                                                    </div>
+                                                                    <select name="jenis_alat" class="form-control">
+                                                                        <option value="1">Mesin</option>
+                                                                        <option value="2">Non Mesin</option>
+                                                                    </select>
+                                                                </div>
+                                                           <!--  </div> -->
+                                                        <!-- </div> -->
+                                                                <fieldset>
+                                                                    <legend>Jam Pemeliharaan</legend>
+                                                                    <div class="form-row">
+                                                                        <div class="form-group col-md-6">
+                                                                            <div class="input-group mb-3">
+                                                                                <div class="input-group-prepend">
+                                                                                    <span class="input-group-text">JP1</span>
+                                                                                </div>
+                                                                                <input name="jp_1" type="number" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                        <div class="form-group col-md-6">
+                                                                            <div class="input-group mb-3">
+                                                                                <div class="input-group-prepend">
+                                                                                    <span class="input-group-text">JP2</span>
+                                                                                </div>
+                                                                                <input name="j_2" type="number" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                    <div class="form-row">
+                                                                        <div class="form-group col-md-6">
+                                                                            <div class="input-group mb-3">
+                                                                                <div class="input-group-prepend">
+                                                                                    <span class="input-group-text">JP3</span>
+                                                                                </div>
+                                                                                <input name="jp_3" type="number" class="form-control">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group col-md-6">
+                                                                            <div class="input-group mb-3">
+                                                                                <div class="input-group-prepend">
+                                                                                    <span class="input-group-text">JP4</span>
+                                                                                </div>
+                                                                                <input name="jp_4" type="number" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-row">
+                                                                        <div class="form-group col-md-6">
+                                                                            <div class="input-group mb-3">
+                                                                                <div class="input-group-prepend">
+                                                                                    <span class="input-group-text">JP5</span>
+                                                                                </div>
+                                                                                <input name="jp_5" type="number" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                
+                                                                <div class="form-group col-md-6">
+                                                                    <div class="input-group mb-3">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">JP6</span>
+                                                                        </div>
+                                                                        <input name="jp_6" type="number" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-12">
+                                                                    <div class="input-group mb-3">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">Jam Change Over</span>
+                                                                        </div>
+                                                                        <input name="jp_co" type="number" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <input type="submit" class="btn btn-primary" value="Submit">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                        <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                            <table class="table" id="mainTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Lokasi</th>
+                                        <th width="15%">Jam kerja</th>
+                                        <th width="20%">Status</th>
+                                        <th>Pemeliharaan</th>
+                                        <th>Change Over</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="input-group-text alert-danger">
+                                                Mesin 1
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="input-group-text" style="background-color:white">
+                                                ULPL AMP
+                                            </span>
+                                        </td>
+                           <td>
+                                <div class="row">
+                                    <div class="input-group mb-3">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               aria-label="JSMO" 
+                                               aria-describedby="jsmo" 
+                                               style="background-color:white"
+                                               disabled 
+                                               value="1103"/>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text alert-success" id="jsmo">JSMO</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-group mb-3">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               aria-label="JSMO" 
+                                               aria-describedby="jso" 
+                                               style="background-color:white"
+                                               disabled 
+                                               value="113"/>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text alert-info" id="jso">JSO</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <input class="form-control alert-danger" style="background-color:white" value="OFF" disabled/>
+                                    <div class="input-group-append">
+                                        <a class="btn btn-danger" href="#"><i class="fa fa-pencil"></i></a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="input-group-text">Normal</span>
+                            </td>
+                            <td>
+                                <div class="input-group mb-3">
+                                    <input class="form-control alert-danger" style="background-color:white" value="Alarm" disabled/>
+                                    <div class="input-group-append">
+                                        <a class="btn btn-danger" href="#"><i class="fa fa-bell"></i></a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="input-group-text alert-warning">
+                                    Rotor Turbocharger 
+                                </span>
+                            </td>
+                            <td>
+                                <span class="input-group-text" style="background-color:white">
+                                    ULPL PMT
+                                </span>
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="input-group mb-3">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               aria-label="JSMO" 
+                                               aria-describedby="jso" 
+                                               style="background-color:white"
+                                               disabled 
+                                               value="911"/>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text alert-warning" id="jso">Jam</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="input-group-text">
+                                    Normal
+                                </span>
+                            </td>
+                            <td>
+                                <span class="input-group-text alert-warning">
+                                    Pemeliharaan 1
+                                </span>
+                            </td>
+                            <td>
+                                <div class="input-group mb-3">
+                                    <input class="form-control alert-warning" style="background-color:white" value="Warning" disabled/>
+                                    <div class="input-group-append">
+                                        <a class="btn btn-warning" href="#"><i class="fa fa-exclamation-triangle"></i></a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="input-group-text alert-success">
+                                    Pompa A
+                                </span>
+                            </td>
+                            <td>
+                                <span class="input-group-text" style="background-color:white">
+                                    ULPL TNJ 
+                                </span>
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="input-group mb-3">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               aria-label="JSMO" 
+                                               aria-describedby="jso" 
+                                               style="background-color:white"
+                                               disabled 
+                                               value="1000"/>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="jso">Jam</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="input-group-text">
+                                    Normal
+                                </span>
+                            </td>
+                            <td>
+                                <span class="input-group-text">
+                                    Normal
+                                </span>
+                            </td>
+                            <td>
+                                <div class="input-group mb-3">
+
+                                    <input class="form-control alert-success" 
+                                           style="background-color:white" 
+                                           value="Change Over" 
+                                           disabled/>
+                                    <div class="input-group-append">
+                                        <a class="btn btn-success" href="#"><i class="fa fa-unlock"></i></a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="input-group-text alert-success">
+                                    Pompa B
+                                </span>
+                            </td>
+                            <td>
+                                <span class="input-group-text" style="background-color:white">
+                                    ULPL AMP 
+                                </span>
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="input-group mb-3">
+                                        <input type="text" 
+                                               class="form-control" 
+                                               aria-label="JSMO" 
+                                               aria-describedby="jso" 
+                                               style="background-color:white"
+                                               disabled 
+                                               value="48"/>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="jso">Jam</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="input-group-text">
+                                    Normal
+                                </span>
+                            </td>
+                            <td>
+                                <span class="input-group-text">
+                                    Normal
+                                </span>
+                            </td>
+                            <td>
+                                <div class="input-group mb-3">
+                                    <input class="form-control alert-success" 
+                                           style="background-color:white" 
+                                           value="Change Over" 
+                                           disabled/>
+                                    <div class="input-group-append">
+                                        <a class="btn btn-success" href="#"><i class="fa fa-unlock"></i></a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+ 
