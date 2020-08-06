@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm 
 from wtforms import StringField, PasswordField, BooleanField
@@ -15,6 +15,10 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
+
+
+
+
  
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -37,6 +41,10 @@ class RegisterForm(FlaskForm):
     username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
     password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
 
+@app.after_request
+def after_request(response):
+    response.headers.add('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0') 
+    return response
 
 @app.route('/')
 def index():
@@ -59,10 +67,14 @@ def login():
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user, remember=form.remember.data)
+                flash('Welcome %s' % user.email)
                 return redirect(url_for('dashboard'))
+            else:
+                flash('Wrong email or password')
+                return render_template("login.html", form=form)
 
-        return '<h1>Invalid username or password</h1>'
-        #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
+        # return '<h1>Invalid username or password</h1>'
+        # #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
 
     return render_template('login.html', form=form)
 
@@ -90,7 +102,9 @@ def dashboard():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+
+    session.clear()
+    return redirect(url_for('/'))
 
 if __name__ == '__main__':
     app.run(debug=True)
