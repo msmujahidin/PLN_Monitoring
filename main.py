@@ -17,8 +17,6 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 
-
-
  
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -41,10 +39,6 @@ class RegisterForm(FlaskForm):
     username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
     password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
 
-@app.after_request
-def after_request(response):
-    response.headers.add('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0') 
-    return response
 
 @app.route('/')
 def index():
@@ -67,11 +61,9 @@ def login():
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user, remember=form.remember.data)
-                flash('Welcome %s' % user.email)
                 return redirect(url_for('dashboard'))
-            else:
-                flash('Wrong email or password')
-                return render_template("login.html", form=form)
+        
+        return redirect(url_for('login'))
 
         # return '<h1>Invalid username or password</h1>'
         # #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
@@ -88,8 +80,8 @@ def signup():
         db.session.add(new_user)
         db.session.commit()
 
-        # return '<h1>New user has been created!</h1>'
-        return '<h1>' + form.username.data + ' ' + form.email.data + ' ' + form.password.data + '</h1>'
+        return redirect(url_for('login'))
+        # return '<h1>' + form.username.data + ' ' + form.email.data + ' ' + form.password.data + '</h1>'
 
     return render_template('signup.html', form=form)
 
@@ -104,7 +96,8 @@ def logout():
     logout_user()
 
     session.clear()
-    return redirect(url_for('/'))
+    
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug = True)
