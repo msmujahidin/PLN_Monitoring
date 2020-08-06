@@ -17,12 +17,24 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 
+
+
  
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(15), unique=True)
     email = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(80))
+
+
+    def __init__(self, id, username, password):
+        self.id = id
+        self.username = username
+        self.email = email
+        self.password = password
+
+    def __repr__(self):
+        return f'<User: {self.username}>'
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -63,7 +75,7 @@ def login():
                 login_user(user, remember=form.remember.data)
                 return redirect(url_for('dashboard'))
         
-        return redirect(url_for('login'))
+        # return redirect(url_for('login'))
 
         # return '<h1>Invalid username or password</h1>'
         # #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
