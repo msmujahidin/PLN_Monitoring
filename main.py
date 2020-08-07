@@ -17,7 +17,7 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 
-
+# class sensor()
 
  
 class User(UserMixin, db.Model):
@@ -27,11 +27,11 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(80))
 
 
-    def __init__(self, id, username, password):
-        self.id = id
-        self.username = username
-        self.email = email
-        self.password = password
+    # def __init__(self, id, username, password):
+    #     self.id = id
+    #     self.username = username
+    #     self.email = email
+    #     self.password = password
 
     def __repr__(self):
         return f'<User: {self.username}>'
@@ -75,7 +75,7 @@ def login():
                 login_user(user, remember=form.remember.data)
                 return redirect(url_for('dashboard'))
         
-        # return redirect(url_for('login'))
+        return redirect(url_for('login'))
 
         # return '<h1>Invalid username or password</h1>'
         # #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
@@ -107,8 +107,7 @@ def dashboard():
 def logout():
     logout_user()
 
-    session.clear()
-    
+ 
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
