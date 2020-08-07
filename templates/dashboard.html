@@ -9,10 +9,10 @@
     <title>Dashboard - Brand</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="static/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="static/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="static/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="static/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='static/fonts/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='static/fonts/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='static/fonts/fontawesome5-overrides.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='static/css/Navigation-with-Search.css')}}">
 </head>
 
 <body id="page-top">
@@ -28,7 +28,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="profile"><i class="fas fa-user"></i>User Management</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="table"><i class="fas fa-table"></i><span>Data Management</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="logout"><i class="far fa-user-circle"></i><span>Logout</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('logout') }}"><i class="far fa-user-circle"></i><span>Logout</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('logout') }}"></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
