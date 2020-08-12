@@ -39,10 +39,15 @@ login
 
       <form class="form-signin" method="POST" action="login">
         <h2 class="form-signin-heading">Please sign in</h2>
-        {{ form.hidden_tag() }}
+
+        <a href="{{ url_for('login') }}" class="btn-google m-b-20">
+            <img src="{{url_for('static', filename='images/icons/icon-google.png')}}" alt="GOOGLE">
+            Google
+        </a>
+        <!-- {{ form.hidden_tag() }}
         {{ wtf.form_field(form.username) }}
         {{ wtf.form_field(form.password) }}
-        {{ wtf.form_field(form.remember) }}
+        {{ wtf.form_field(form.remember) }} -->
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
