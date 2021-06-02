@@ -68,7 +68,7 @@ torch @ https://download.pytorch.org/whl/cpu/torch-1.1.0-cp36-cp36m-linux_x86_64
 torch-mtcnn==0.0.7
 torchvision @ https://download.pytorch.org/whl/cpu/torchvision-0.3.0-cp36-cp36m-linux_x86_64.whl
 twilio==6.44.2
-urllib3==1.24.3
+urllib3==1.26.5
 uvicorn==0.11.8
 uvloop==0.14.0
 visitor==0.1.3
