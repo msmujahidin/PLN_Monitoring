@@ -27,7 +27,7 @@ gunicorn==20.0.4
 h11==0.9.0
 httpcore==0.10.1
 httptools==0.1.1
-httpx==0.14.1
+httpx==0.23.0
 idna==2.8
 immutables==0.14
 itsdangerous==1.1.0
