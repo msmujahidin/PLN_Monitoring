@@ -40,7 +40,7 @@ numpy==1.19.1
 oauthlib==3.0.1
 paho-mqtt==1.1
 Pillow==7.2.0
-protobuf==3.12.2
+protobuf==3.18.3
 psycopg2==2.8.5
 pycparser==2.20
 pyexcel==0.6.3
